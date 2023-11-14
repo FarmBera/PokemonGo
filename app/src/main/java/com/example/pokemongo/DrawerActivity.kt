@@ -28,6 +28,7 @@ class DrawerActivity : AppCompatActivity() {
 
         binding = ActivityDrawerBinding.inflate(layoutInflater)
 
+        // TODO Implement: 헤더(액션바) 제거하는 코드
 //        requestWindowFeature(Window.FEATURE_NO_TITLE) ;
 //        this.getWindow().setFlags (WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager. LayoutParams .FLAG_FULLSCREEN);
 //        getSupportActionBar().hide(); //This Line hides the action bor
@@ -49,13 +50,17 @@ class DrawerActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
+
+
+
         binding.appBarDrawer.fab1.setOnClickListener {
             val intent = Intent(this@DrawerActivity, ProfileActivity::class.java)
             startActivity(intent)
         }
 
         binding.appBarDrawer.fab2.setOnClickListener {
-            val intent = Intent(this@DrawerActivity, MainActivity::class.java)
+            val intent = Intent(this@DrawerActivity, MainMenuActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
             startActivity(intent)
         }
 
