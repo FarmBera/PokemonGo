@@ -11,11 +11,14 @@ class MainMenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//        setContentView(R.layout.activity_main_menu)
 
-//        binding.menuClose.setOnClickListener {
-//            this.finish()
-//        }
+        title = "Main Menu";
+        // setContentView(R.layout.activity_main_menu)
+
+        // binding.menuClose.setOnClickListener {
+            // this.finish()
+        // }
+
         binding.menuClose.setOnClickListener {
             // Insert Icon Animation
             finish()

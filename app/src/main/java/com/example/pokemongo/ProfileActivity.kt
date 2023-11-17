@@ -12,6 +12,6 @@ class ProfileActivity : AppCompatActivity() {
 
         title = "Your Profile";
 
-        binding.userProfileImg.clipToOutline = true
+//        binding.userProfileImg.clipToOutline = true
     }
 }

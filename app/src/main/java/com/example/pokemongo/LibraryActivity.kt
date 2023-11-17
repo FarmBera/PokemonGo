@@ -10,7 +10,7 @@ class LibraryActivity : AppCompatActivity() {
         val binding = ActivityLibraryBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
+        title = "My Pokemons";
         // Event Process
     }
 
