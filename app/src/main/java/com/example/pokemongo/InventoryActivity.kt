@@ -3,7 +3,9 @@ package com.example.pokemongo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokemongo.databinding.ActivityInventoryBinding
 
@@ -43,7 +45,6 @@ class BoardAdapter(val itemList: ArrayList<BoardItem>) :
         val tv_name = itemView.findViewById<TextView>(R.id.tv_name)
     }
 }
-출처: https://uknowblog.tistory.com/29 [Uknow's Lab.:티스토리]
 
 data class BoardItem(val time: String, val title: String, val name: String) {
 
