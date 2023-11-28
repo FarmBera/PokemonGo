@@ -34,6 +34,7 @@ class MainMenuActivity : AppCompatActivity() {
             binding.menuLibrary.startAnimation(anim_menu_to_right)
             binding.menuSettings.startAnimation(anim_menu_to_down)
             finish()
+            overridePendingTransition(R.anim.load_fade_in, R.anim.load_fade_out)
         }
         binding.backgroundsx.setOnClickListener{
             MenuCloseEff()

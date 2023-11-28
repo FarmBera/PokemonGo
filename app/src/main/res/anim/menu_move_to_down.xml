@@ -3,5 +3,5 @@
     android:interpolator="@android:anim/decelerate_interpolator"
     android:duration="300"
     android:fromYDelta="0"
-    android:toYDelta="70dp"
+    android:toYDelta="100dp"
     android:fillAfter="true" />

@@ -6,9 +6,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.pokemongo.R
 import com.example.pokemongo.databinding.RecyclerLibraryBinding
+import com.example.pokemongo.model.ItemLib
 import com.example.pokemongo.model.ItemModel
 
-class LibraryAdapter(private val items: List<ItemModel>) :
+class LibraryAdapter(private val items: List<ItemLib>) :
     RecyclerView.Adapter<LibraryAdapter.ViewHolder>() {
 
     class ViewHolder(val binding: RecyclerLibraryBinding) : RecyclerView.ViewHolder(binding.root)
@@ -26,13 +27,21 @@ class LibraryAdapter(private val items: List<ItemModel>) :
             item.imageUrl, "drawable", holder.itemView.context.packageName
         )
 
-        Glide.with(holder.binding.root.context)
-//            .load(item.imageUrl)
-            .load(imageResourceId)
-            .placeholder(R.drawable.playtogeth)
-            .into(holder.binding.libIcon)
+        if (item.bool) {
+            Glide.with(holder.binding.root.context)
+                .load(R.drawable.playtogeth)
+//                .placeholder(R.drawable.playtogeth)
+                .into(holder.binding.libIcon)
+        }
+        else {
+            Glide.with(holder.binding.root.context)
+                .load(R.drawable.blackbunny)
+//                .placeholder(R.drawable.blackbunny)
+                .into(holder.binding.libIcon)
+        }
 
-        holder.binding.libName.text = item.text
+
+//        holder.binding.libName.text = item.text
     }
 
     override fun getItemCount(): Int {
