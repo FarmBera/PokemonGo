@@ -1,15 +1,18 @@
 package com.example.pokemongo
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
+import androidx.annotation.RequiresApi
 import com.example.pokemongo.databinding.ActivityMainMenuBinding
 
 class MainMenuActivity : AppCompatActivity() {
+    @RequiresApi(34)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        overridePendingTransition(R.anim.popup_fade_in, R.anim.none)
+//        overridePendingTransition(R.anim.popup_fade_in, R.anim.none)
         val binding = ActivityMainMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -34,7 +37,9 @@ class MainMenuActivity : AppCompatActivity() {
             binding.menuLibrary.startAnimation(anim_menu_to_right)
             binding.menuSettings.startAnimation(anim_menu_to_down)
             finish()
-            overridePendingTransition(R.anim.load_fade_in, R.anim.load_fade_out)
+//            overrideActivityTransition(Activity.OVERRIDE_TRANSITION_CLOSE, R.anim.load_fade_in, R.anim.load_fade_out)
+            overrideActivityTransition(Activity.OVERRIDE_TRANSITION_CLOSE, R.anim.none, R.anim.load_fade_out)
+//            overridePendingTransition(R.anim.load_fade_in, R.anim.load_fade_out)
         }
         binding.backgroundsx.setOnClickListener{
             MenuCloseEff()

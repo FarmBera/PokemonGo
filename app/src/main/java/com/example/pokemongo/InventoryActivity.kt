@@ -17,21 +17,7 @@ import com.example.pokemongo.databinding.ActivityInventoryBinding
 import com.example.pokemongo.model.ItemModel
 import java.time.LocalDateTime
 
-class My_Pokemon {
-    var id: Int? = null
-    var num: Int? = null
-    var name: String? = null
-    var favorite: Int? = null
-    var latitude: Double? = null
-    var longitude: Double? = null
-    var time: LocalDateTime? = null
-    var level: Int? = null
-    var exp: Int? = null
-    var hp: Int? = null
-    var current_hp: Int? = null
-    var attack: Int? = null
-    var defense: Int? = null
-}
+
 class InventoryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInventoryBinding
     private lateinit var adapter: InventoryAdapter
@@ -51,6 +37,7 @@ class InventoryActivity : AppCompatActivity() {
 
         val imgURL: String = "playtogeth"
 
+
         val items = listOf(
             ItemModel(imgURL, "Item Inventory 1"),
             ItemModel(imgURL, "Item Inventory 2"),
@@ -66,6 +53,7 @@ class InventoryActivity : AppCompatActivity() {
             ItemModel(imgURL, "Item Inventory 12"),
         )
 
+//        adapter = InventoryAdapter() // 기존
         adapter = InventoryAdapter(items)
 
         binding.RecyclerInventory.layoutManager = LinearLayoutManager(this)
